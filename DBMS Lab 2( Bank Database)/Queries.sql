@@ -89,6 +89,10 @@ select * from bank_customer;
 select * from depositer;
 select * from loan;
 
+-- Query 3
+select distinct c.customer_name from bank_customer c,bank_account b where exists(select d.customer_name,count(d.customer_name) from depositer d,bank_account ba where ba.accno = d.accno and 
+c.customer_name = d.customer_name and ba.branch_name = 'SBI_ResidencyRoad' group by d.customer_name having count(d.customer_name)>=2);
+
 -- Query 4
 select d.customer_name from depositer d,branch b,bank_account a 
 where b.branch_name=a.branch_name
