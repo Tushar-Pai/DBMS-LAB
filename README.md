@@ -7,4 +7,4 @@
   
 2) Completed LAB Program 2 (Bank DataBase).
   All the queries for lab program 1 is in the "Queries.sql" file. 
-  Query 4 is not yet completed 
+

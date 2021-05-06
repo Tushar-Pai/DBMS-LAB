@@ -89,5 +89,17 @@ select * from bank_customer;
 select * from depositer;
 select * from loan;
 
+-- Query 4
+select d.customer_name from depositer d,branch b,bank_account a 
+where b.branch_name=a.branch_name
+AND a.accno=d.accno
+and branch_city='Delhi'
+group by d.customer_name 
+ HAVING COUNT(distinct b.branch_name)=(
+                SELECT COUNT(branch_name)
+                FROM branch
+                WHERE branch_city='Delhi');
+                
+-- Query 5
 delete from bank_account where branch_name in (select branch_name from branch where branch_city = 'Bombay');
 select * from bank_account;
