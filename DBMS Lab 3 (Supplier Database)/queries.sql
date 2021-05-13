@@ -40,6 +40,21 @@ SELECT DISTINCT P.pname
 FROM Parts P, Catalog C
 WHERE P.pid = C.pid;
 
+-- Query 2
+select S.sname from SUPPLIERS S where not exists
+(select P.pid from PARTS P where not exists
+ (select C.sid from CATALOG C where C.sid = S.sid and C.pid = P.pid));
+ 
+-- Query 3
+select S.sname from SUPPLIERS S where not exists
+ (select P.pid from PARTS P where P.color = 'Red' and 
+ (not exists (select C.sid from CATALOG C where C.sid = S.sid and C.pid = P.pid)));
+ 
+ -- Query 4
+ select P.pname from PARTS P, CATALOG C, SUPPLIERS S 
+ where P.pid = C.pid and C.sid = S.sid and S.sname = 'Acme Widget'
+ and not exists (select * from CATALOG C1, SUPPLIERS S1
+ where P.pid = C1.pid and C1.sid = S1.sid and S1.sname <> 'Acme Widget');
 
 -- Query 5
 SELECT DISTINCT C.sid FROM Catalog C
