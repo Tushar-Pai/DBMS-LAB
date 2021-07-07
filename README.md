@@ -1,14 +1,6 @@
 # DBMS-LAB
-
-1) Completed LAB Program 1 (Insurance DataBase).
-  
-2) Completed LAB Program 2 (Bank DataBase).
-
-3) Completed LAB Program 3 (Supplier DataBase).
-
-4) Completed LAB Program 4 (Student Faculty DataBase).
-
-5) Completed LAB Program 5 (Flight DataBase).
-
+Name: Tushar A Pai
+USN : 1BM19CS174
+Completed all programs and uploaded lab record for all 10 programs.
    
 
